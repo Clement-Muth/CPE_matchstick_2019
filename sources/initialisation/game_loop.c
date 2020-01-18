@@ -9,5 +9,9 @@
 
 void game_loop(main_t *match)
 {
-
+    while (game) {
+        process(match);
+        display(match);
+        return;
+    }
 }

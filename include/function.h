@@ -19,4 +19,6 @@ void display(main_t *match);
 
 void create_map(main_t *match);
 
+void game_loop(main_t *match);
+
 #endif /* !FUNCTION_H_ */

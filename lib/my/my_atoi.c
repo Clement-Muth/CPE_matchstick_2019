@@ -9,23 +9,16 @@
 
 int my_atoi(char *string)
 {
-    register int result = 0;
-    register unsigned int digit;
-    char sign = string[0];
+    int sign = 1;
+    unsigned int num = 0;
 
-    if (*string == '-')
-        ++string;
-    else {
-        if (*string == '+')
-            ++string;
-    }
-    while (++string) {
-        digit = *string - '0';
-        if (digit > 9)
+    do {
+        if (*string == '-')
+            sign *= -1;
+        else if (*string >= '0' && *string <= '9')
+            num = (num * 10) + (*string - '0');
+        else if (num > 0)
             break;
-        result = (10 * result) + digit;
-    }
-    if (sign == '-')
-        return -(result);
-    return (result);
+    } while (*string++);
+    return (num * sign);
 }

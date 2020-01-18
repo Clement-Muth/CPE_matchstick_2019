@@ -15,6 +15,7 @@ typedef struct
     int ac;
     int star;
     _Bool turn;
+    _Bool game;
 } main_t;
 
 #endif /* !STRUCT_H_int */

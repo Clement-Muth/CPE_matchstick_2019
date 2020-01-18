@@ -21,8 +21,7 @@ int main(int argc, char **argv)
 
     error_handling(match, argc, argv);
     initialisation(match, argc, argv);
-    process(match);
-    display(match);
+    game_loop(match);
     my_free(match);
     return (EXIT_SUCCESS);
 }
