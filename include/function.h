@@ -17,4 +17,6 @@ void process(main_t *match);
 
 void display(main_t *match);
 
+void create_map(main_t *match);
+
 #endif /* !FUNCTION_H_ */

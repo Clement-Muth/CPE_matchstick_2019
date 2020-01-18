@@ -10,8 +10,11 @@
 
 typedef struct
 {
+    char **map;
     char **av;
     int ac;
+    int star;
+    _Bool turn;
 } main_t;
 
 #endif /* !STRUCT_H_int */

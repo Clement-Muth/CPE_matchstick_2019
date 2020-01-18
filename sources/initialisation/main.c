@@ -7,6 +7,14 @@
 
 #include "main/main.h"
 
+static void my_free(main_t *match)
+{
+    for (int i = 0; i != line; ++i)
+        free(map[i]);
+    free(map);
+    free(match);
+}
+
 int main(int argc, char **argv)
 {
     main_t *match = my_memalloc(sizeof(main_t));
@@ -14,6 +22,7 @@ int main(int argc, char **argv)
     error_handling(match, argc, argv);
     initialisation(match, argc, argv);
     process(match);
-    free(match);
+    display(match);
+    my_free(match);
     return (EXIT_SUCCESS);
 }

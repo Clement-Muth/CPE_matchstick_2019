@@ -11,4 +11,5 @@ void initialisation(main_t *match, int argc, char **argv)
 {
     ac = argc;
     av = argv;
+    turn = true;
 }

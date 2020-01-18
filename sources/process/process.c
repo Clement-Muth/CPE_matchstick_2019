@@ -7,7 +7,9 @@
 
 #include "main/main.h"
 
+
+
 void process(main_t *match)
 {
-    
+    create_map(match);
 }
