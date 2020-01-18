@@ -13,8 +13,8 @@ char **wa_to_wa(char **array)
     int i = 0;
 
     if (result == NULL) {
-        free (result);
-        exit (84);
+        free(result);
+        exit(84);
     }
     for (; array[i]; ++i)
         result[i] = my_strdup(array[i]);

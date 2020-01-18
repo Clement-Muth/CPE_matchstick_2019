@@ -9,7 +9,8 @@
 
 void my_rm_line_array(char **array, size_t line)
 {
-    int i = 0, n = 0;
+    int i = 0;
+    int n = 0;
 
     for (; array[i]; ++i, ++n) {
         if (i == line)

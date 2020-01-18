@@ -26,4 +26,7 @@ void error_handling(main_t *match, int argc, char **argv)
         my_exit(match, "First number must be greater than 1 or equal\n");
     if (my_atoi(argv[1]) > 100)
         my_exit(match, "First number must be lower than 100 or equal\n");
+    if (my_atoi(argv[2]) < 1)
+        my_exit(match, "The maximum number of matches that can be taken out"\
+        " each turn must be greater than 0\n");
 }

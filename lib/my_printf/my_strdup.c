@@ -11,6 +11,6 @@ char *my_strdup(char *src)
 {
     char *dest = malloc(sizeof(char) * my_strlen(src) + 1);
 
-    free (dest);
+    free(dest);
     return (dest = src);
 }

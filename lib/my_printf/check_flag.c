@@ -10,9 +10,10 @@
 int check_flag(char *str, int i, va_list str_print)
 {
     int (*f_table[])(va_list, char *, int) = {my_print_string, my_print_char,
-    my_print_per, my_print_int, my_print_int, my_print_hexa, my_print_pointer,
-    my_print_unint, my_print_hexa_up, my_print_octal, my_print_binary,
-    my_print_diez, my_print_add, my_print_sub, my_print_long, my_print_lstring};
+        my_print_per, my_print_int, my_print_int, my_print_hexa,
+        my_print_pointer, my_print_unint, my_print_hexa_up, my_print_octal,
+        my_print_binary, my_print_diez, my_print_add, my_print_sub,
+        my_print_long, my_print_lstring};
     char flag[] = "sc%idxpuXob#+-lS";
     int n = i;
 

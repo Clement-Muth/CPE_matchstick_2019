@@ -24,5 +24,5 @@ void my_put_pointer(va_list str_print, char *str, int i)
         nbr /= 16;
     }
     my_putstr(my_revstr((unsigned char *)str2));
-    free (str2);
+    free(str2);
 }

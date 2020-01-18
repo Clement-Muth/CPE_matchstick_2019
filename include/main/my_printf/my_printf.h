@@ -15,9 +15,9 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-#define EXIT_SUCCESS                    0
-#define RETURN_AFTER_DELETE_SPACE       i - (i - n + 1)
-#define IS_NUMBER                       str[i - 1] >= '0' && str[i - 1] <= '9'
+#define EXIT_SUCCESS 0
+#define RETURN_AFTER_DELETE_SPACE i - (i - n + 1)
+#define IS_NUMBER str[i - 1] >= '0' && str[i - 1] <= '9'
 
 int my_printf(char *, ...);
 int my_print_space(int, char *);

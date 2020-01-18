@@ -15,10 +15,11 @@ int my_atoi(char *string)
 
     if (*string == '-')
         ++string;
-    else
+    else {
         if (*string == '+')
             ++string;
-    for (; ; ++string) {
+    }
+    while (++string) {
         digit = *string - '0';
         if (digit > 9)
             break;

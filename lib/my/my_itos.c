@@ -16,10 +16,10 @@ char *my_itos(unsigned nb)
     char *result = malloc(sizeof(char) * 20);
 
     if (nb < 0) {
-        free (result);
-        exit (EXIT_ERROR);
+        free(result);
+        exit(EXIT_ERROR);
     }
-    for ( i = 0; nb != 0; ++i) {
+    for (i = 0; nb != 0; ++i) {
         tmp = nb % 10;
         result[i] = tmp + 48;
         nb /= 10;

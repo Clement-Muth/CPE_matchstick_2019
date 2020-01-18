@@ -23,9 +23,4 @@ void display(main_t *match)
         write(1, "*\n", 2);
     }
     display_star(star);
-    write(1, ((turn) ? "\nYour turn:\n" : "\nIA's turn:\n"), 13);
-    if (turn)
-        write(1, "Line: ", 7);
-    else
-        my_printf("AI removed 3 match(es) from line 2\n");
 }
