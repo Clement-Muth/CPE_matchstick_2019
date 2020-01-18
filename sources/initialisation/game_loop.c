@@ -9,9 +9,10 @@
 
 void game_loop(main_t *match)
 {
+    display(match);
     while (game) {
-        process(match);
+        write(1, "\nYour turn:\n", 13);
+        player_turn(match);
         display(match);
-        return;
     }
 }

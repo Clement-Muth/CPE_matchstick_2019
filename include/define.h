@@ -29,6 +29,12 @@
 
 #define game match->game
 
+#define get_line match->get_line
+
+#define get_nbr match->get_nbr
+
+
+
 #define __ERROR_MSG my_strcat("[ ERROR ][ ", my_strcat(_FILE, my_strcat(" ][ l"\
 ": ", my_strcat(my_itos(__LINE), my_strcat(" ] ", __ERROR)))))
 

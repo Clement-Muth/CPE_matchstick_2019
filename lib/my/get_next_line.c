@@ -2,10 +2,10 @@
 ** EPITECH PROJECT, 2020
 ** CPE_matchstrick_2019
 ** File description:
-** process
+** get_next_line
 */
 
-#include "main/main.h"
+#include "include/my.h"
 
 char *get_next_line(const int fd)
 {
@@ -20,16 +20,4 @@ char *get_next_line(const int fd)
         str[i] = buffer[0];
     }
     return ((size == 0 && i == 0) || str[0] == '\n') ? (NULL) : (str);
-}
-
-void player_turn(main_t *match)
-{
-    write(1, "Line: ", 7);
-    if ((get_line = get_next_line(0)) == NULL)
-        return (player_turn(match));
-}
-
-void process(main_t *match)
-{
-    create_map(match);
 }

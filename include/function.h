@@ -21,4 +21,6 @@ void create_map(main_t *match);
 
 void game_loop(main_t *match);
 
+void player_turn(main_t *match);
+
 #endif /* !FUNCTION_H_ */

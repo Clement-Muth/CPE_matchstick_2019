@@ -13,4 +13,5 @@ void initialisation(main_t *match, int argc, char **argv)
     av = argv;
     turn = true;
     game = true;
+    get_line = NULL;
 }
