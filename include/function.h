@@ -31,4 +31,8 @@ _Bool check_line(main_t *match);
 
 _Bool check_possibility(main_t *match);
 
+void ia_turn(main_t *match);
+
+_Bool check_map(main_t *match);
+
 #endif /* !FUNCTION_H_ */

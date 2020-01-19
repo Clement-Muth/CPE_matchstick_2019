@@ -21,7 +21,8 @@ _Bool check_possibility(main_t *match)
     for (int i = 1; map[my_atoi(get_line) - 1][i]; ++i)
         if (map[my_atoi(get_line) - 1][i] == '|')
             return (true);
-    my_putstrc("\n/!\\ Any matches to take here\n", RED, true);
+    if (turn == true)
+        my_putstrc("\n/!\\ Any matches to take here\n", RED, true);
     return (false);
 }
 
