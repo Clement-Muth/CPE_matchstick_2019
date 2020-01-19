@@ -9,7 +9,7 @@
 
 static void my_malloc(main_t *match)
 {
-    map = my_memalloc(sizeof(char *) * line + 1);
+    map = my_memalloc(sizeof(char *) * line + 10);
     for (int i = 0; i != line; ++i)
         map[i] = my_memalloc(sizeof(char) * star);
 }
@@ -28,7 +28,10 @@ static void fill_map(main_t *match, int i)
 
 void create_map(main_t *match)
 {
+    int i = 0;
+
     my_malloc(match);
-    for (int i = 0; i != line; ++i)
+    for (i = 0; i != line; ++i)
         fill_map(match, i);
+    map[i] = NULL;
 }

@@ -9,7 +9,7 @@
 
 char *my_strdup(char *src)
 {
-    size_t len = my_strlen(src) + 1;
+    size_t len = my_strlen(src) + 2;
     void *new = my_memalloc(len);
 
     return ((char *)my_memcpy(new, src, len));

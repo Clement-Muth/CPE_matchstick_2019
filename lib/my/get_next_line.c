@@ -13,19 +13,28 @@ static void my_exit(void)
     exit(EXIT_ERROR);
 }
 
-char *get_next_line(const int fd)
+static char *my_malloc(char *str)
 {
     int i = 0;
+    char *str2 = my_memalloc((my_strlen(str) + 2));
+
+    for (i = 0; str[i]; ++i)
+        str2[i] = str[i];
+    str2[i + 1] = '\0';
+    free(str);
+    return (str2);
+}
+
+char *get_next_line(const int fd)
+{
     int size = 0;
     static char buffer[1];
     char *str = my_memalloc(1);
 
     str[0] = '\0';
-    for (i = 0; (size = read(fd, buffer, 1)) > 0 && buffer[0] != '\n'; ++i) {
-        str = my_strcpy(str, str);
+    for (int i = 0; (size = read(fd, buffer, 1)) > 0 && buffer[0] != '\n'; ++i) {
+        str = my_malloc(str);
         str[i] = buffer[0];
     }
-    if ((size == 0 && i == 0) || str[0] == '\n')
-        my_exit();
     return (str);
 }

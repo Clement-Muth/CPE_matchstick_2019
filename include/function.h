@@ -29,4 +29,6 @@ _Bool check_nbr(main_t *match);
 
 _Bool check_line(main_t *match);
 
+_Bool check_possibility(main_t *match);
+
 #endif /* !FUNCTION_H_ */
