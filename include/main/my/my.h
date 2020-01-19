@@ -94,7 +94,7 @@ char *my_revstr(unsigned char *string);
 char *my_strdup(char *string);
 
 ////////////////////////////////////////////////////////////
-/// concatenat strings
+/// Append SRC on the end of DEST
 ///
 ////////////////////////////////////////////////////////////
 char *my_strcat(char *dest, char const *src);
@@ -295,7 +295,7 @@ int my_ctoi(char charac);
 void my_qsort(char **array, int first, int last);
 
 ////////////////////////////////////////////////////////////
-/// \brief Copy null-terminated memory blocks to another
+/// \brief Copy SRC to DEST
 ///
 /// \param destination
 /// \param source
@@ -387,5 +387,10 @@ void my_modif_line_array(char **array, char *string, size_t line);
 /// \return void
 ////////////////////////////////////////////////////////////
 void my_rm_line_array(char **array, size_t line);
+
+
+char *get_next_line(const int fd);
+
+void *my_memcpy(void *dest, const void *src, size_t len);
 
 #endif /* !MY_H_ */

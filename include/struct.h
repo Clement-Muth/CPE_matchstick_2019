@@ -15,7 +15,7 @@ typedef struct
     int ac;
     int star;
     char *get_line;
-    int get_nbr;
+    char *get_nbr;
     _Bool turn;
     _Bool game;
 } main_t;

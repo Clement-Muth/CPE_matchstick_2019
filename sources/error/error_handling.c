@@ -9,28 +9,62 @@
 
 #define _FILE "error_handling.c"
 
-static void my_exit(main_t *match, char *__ERROR, int __LINE, char *__FILE)
+void my_exit(main_t *match, char *__ERROR, int __LINE, char *__FILE)
 {
     free(match);
-    write(2, __ERROR_MSG, my_strlen(__ERROR_MSG));
+    my_printf("[ ERROR ][ %s ][ l: %d ] %s\n", __FILE, __LINE, __ERROR);
     exit(EXIT_ERROR);
+}
+
+_Bool check_line(main_t *match)
+{
+    if (!is_strnum(get_line)) {
+        my_putstrc("\n/!\\ Please enter a number\n", RED, true);
+        return (false);
+    }
+    if (my_atoi(get_line) > my_atoi(av[1])) {
+        my_putstrc("\n/!\\ The line must be lower than the limit\n", RED, true);
+        return (false);
+    }
+    if (my_atoi(get_line) < 1) {
+        my_putstrc("\n/!\\ The line can't be lower than 1\n", RED, true);
+        return (false);
+    }
+    return (true);
+}
+
+_Bool check_nbr(main_t *match)
+{
+    if (!is_strnum(get_nbr)) {
+        my_putstrc("\n/!\\ Please enter a number\n", RED, true);
+        return (false);
+    }
+    if (my_atoi(get_nbr) > my_atoi(av[2])) {
+        my_putstrc("\n/!\\ The number must be lower than the limit\n", RED, 1);
+        return (false);
+    }
+    if (my_atoi(get_nbr) < 1) {
+        my_putstrc("\n/!\\ The number can't be lower than 1\n", RED, true);
+        return (false);
+    }
+    return (true);
 }
 
 void error_handling(main_t *match, int argc, char **argv)
 {
     if (argc < 3)
-        my_exit(match, "Too few argument\n", 19, "");
+        my_exit(match, "Too few argument", 19, _FILE);
     if (argc > 3)
-        my_exit(match, "Too many argument\n", 21, _FILE);
+        my_exit(match, "Too many argument", 21, _FILE);
     if (!is_strnum(argv[1]) || !is_strnum(argv[2]))
-        my_exit(match, "Argument's must be a number\n", 24, _FILE);
+        my_exit(match, "Argument's must be a number", 24, _FILE);
     if (my_atoi(argv[1]) < 1)
-        my_exit(match, "First number must be greater than 1 or equal\n", 25,
+        my_exit(match, "First number must be greater than 1 or equal", 25,
         _FILE);
     if (my_atoi(argv[1]) > 100)
-        my_exit(match, "First number must be lower than 100 or equal\n", 27,
+        my_exit(match, "First number must be lower than 100 or equal", 27,
         _FILE);
     if (my_atoi(argv[2]) < 1)
         my_exit(match, "The maximum number of matches that can be taken out"\
-        " each turn must be greater than 0\n", 29, _FILE);
+        " each turn must be greater than 0", 29, _FILE);
 }

@@ -5,13 +5,12 @@
 ** my_strdup
 */
 
-#include <stdlib.h>
 #include "include/my.h"
 
 char *my_strdup(char *src)
 {
-    char *dest = malloc(sizeof(char) * my_strlen(src) + 1);
+    size_t len = my_strlen(src) + 1;
+    void *new = my_memalloc(len);
 
-    free(dest);
-    return (dest = src);
+    return ((char *)my_memcpy(new, src, len));
 }

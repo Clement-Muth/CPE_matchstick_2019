@@ -7,6 +7,12 @@
 
 #include "include/my.h"
 
+static void my_exit(void)
+{
+    my_putstr("[ ERROR ][ get_next_line ][ l: 0 ] Echec get_next_line\n");
+    exit(EXIT_ERROR);
+}
+
 char *get_next_line(const int fd)
 {
     int i = 0;
@@ -19,5 +25,7 @@ char *get_next_line(const int fd)
         str = my_strcpy(str, str);
         str[i] = buffer[0];
     }
-    return ((size == 0 && i == 0) || str[0] == '\n') ? (NULL) : (str);
+    if ((size == 0 && i == 0) || str[0] == '\n')
+        my_exit();
+    return (str);
 }
