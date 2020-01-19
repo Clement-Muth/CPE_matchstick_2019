@@ -23,5 +23,5 @@ int main(int argc, char **argv)
     initialisation(match, argc, argv);
     process(match);
     my_free(match);
-    return (EXIT_SUCCESS);
+    return (turn == true) ? (true) : (2);
 }
