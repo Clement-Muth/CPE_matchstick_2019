@@ -13,6 +13,6 @@ void initialisation(main_t *match, int argc, char **argv)
     av = argv;
     turn = true;
     game = true;
-    get_line = my_memalloc(2);
-    get_nbr = my_memalloc(2);
+    get_line = my_memalloc(10);
+    get_nbr = my_memalloc(10);
 }

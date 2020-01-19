@@ -25,6 +25,8 @@ void game_loop(main_t *match)
         turn = true;
         player_turn(match);
         display(match);
+        if (check_map(match) == true)
+            break;
         write(1, "\nAI's turn...\n", 15);
         turn = false;
         ia_turn(match);

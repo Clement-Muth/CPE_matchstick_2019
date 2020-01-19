@@ -32,7 +32,8 @@ char *get_next_line(const int fd)
     char *str = my_memalloc(1);
 
     str[0] = '\0';
-    for (int i = 0; (size = read(fd, buffer, 1)) > 0 && buffer[0] != '\n'; ++i) {
+    for (int i = 0; (size = read(fd, buffer, 1)) > 0 && buffer[0] != '\n';
+    ++i) {
         str = my_malloc(str);
         str[i] = buffer[0];
     }
